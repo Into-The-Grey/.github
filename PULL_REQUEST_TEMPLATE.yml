@@ -1,0 +1,61 @@
+name: Pull Request
+description: Create a new pull request.
+title: "[PR]: "
+labels: ["enhancement", "triage"]
+projects: ["Into-The-Grey/ai_project"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for submitting a pull request! Please fill out the details below.
+  - type: input
+    id: pr_title
+    attributes:
+      label: Pull Request Title
+      description: Provide a title for your pull request.
+      placeholder: ex. Add new feature
+    validations:
+      required: true
+  - type: textarea
+    id: pr_description
+    attributes:
+      label: Description
+      description: Describe the changes in detail.
+      placeholder: Describe your changes here
+    validations:
+      required: true
+  - type: input
+    id: related_issues
+    attributes:
+      label: Related Issues
+      description: Link to any related issues.
+      placeholder: ex. #123
+    validations:
+      required: false
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      description: Ensure you have completed all the requirements.
+      options:
+        - label: My code follows the style guidelines of this project
+          required: true
+        - label: I have performed a self-review of my own code
+          required: true
+        - label: I have commented my code, particularly in hard-to-understand areas
+          required: true
+        - label: I have added tests that prove my fix is effective or that my feature works
+          required: true
+        - label: New and existing unit tests pass locally with my changes
+          required: true
+        - label: Any dependent changes have been merged and published in downstream modules
+          required: true
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this pull request, you agree to follow our [Code of Conduct](https://example.com). 
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true
